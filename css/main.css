@@ -48,6 +48,7 @@
     position: absolute;
     display: flex;
     align-items: center;
+    color: black;
     transition: transform 300ms ease-in-out,font-size 300ms ease-in-out;
 }
 .name-label:hover{
@@ -56,40 +57,43 @@
 .name-field{
     height: 100%;
     width: 100%;
-    padding: 2%;
+    padding: .2% 0 .5%;
     box-sizing: border-box;
-    border: none;
     font-size: 1.05rem;
-    color: rgb(75, 75, 75);
+    border: none;
+    color: rgb(0, 0, 0);
+    border-bottom: 1px solid rgb(174, 174, 174);
 }
 .name-field:hover{
     cursor:pointer;
 }
-.name-field:focus{
-    border-bottom: 1px solid rgb(174, 174, 174);
-}
+/* .name-field:focus{
+} */
 .contact-card-main-container:has(.name-field:not(:placeholder-shown)) .name-label{
-    --pre: calc(-2rem + 1px);
+    --pre: calc(-1.5rem + 1px);
     transform: translateY(var(--pre));
-    font-size: .8rem;
+    font-size: .7rem;
 }
 .contact-card-main-container:has(.name-field:focus) .name-label{
-    transform: translateY(-2rem);
-    font-size: .8rem;
+    transform: translateY(-1.5rem);
+    font-size: .7rem;
 }
 
 
+.container-for-logo{
+    visibility: hidden;
+}
 
 
 .playerNames{
     padding: 2% 0;
 }
-.team-name-wrapper{
+.team-name-wrapper,.lineup-name-wrapper{
     width: 100%;
     position: relative;
     padding: 2% 0;
 }
-.team-label{
+.team-label,.lineup-label{
     pointer-events: none;
     width: 100%;
     height: 100%;
@@ -99,10 +103,10 @@
     align-items: center;
     transition: transform 300ms ease-in-out,font-size 300ms ease-in-out;
 }
-.team-label:hover{
+.team-label:hover,.lineup-label:hover{
     cursor: pointer;
 }
-.teamName{
+.teamName,.lineup-name{
     height: 100%;
     width: 100%;
     padding: 3% 0 .5%;
@@ -112,17 +116,17 @@
     color: rgb(0, 0, 0);
     border-bottom: 1px solid rgb(174, 174, 174);
 }
-.teamName:hover{
+.teamName:hover,.lineup-name:hover{
     cursor:pointer;
 }
 /* .teamName:focus{
 } */
-.team-name-wrapper:has(.teamName:not(:placeholder-shown)) .team-label{
+.team-name-wrapper:has(.teamName:not(:placeholder-shown)) .team-label, .lineup-name-wrapper:has(.lineup-name:not(:placeholder-shown)) .lineup-label{
     --pre: calc(-1.5rem + 1px);
     transform: translateY(var(--pre));
     font-size: .7rem;
 }
-.team-name-wrapper:has(.teamName:focus) .team-label{
+.team-name-wrapper:has(.teamName:focus) .team-label,.lineup-name-wrapper:has(.lineup-name:focus) .lineup-label{
     transform: translateY(-1.5rem);
     font-size: .7rem;
 }

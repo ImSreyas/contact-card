@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/main.css">
     <title>Pointcalc</title>
     <script>
-    // document.querySelector("meta[name=viewport]").setAttribute("content", "height=" + window.innerHeight + "px, width=" + window.innerWidth + "px, initial-scale=1.0")
+    document.querySelector("meta[name=viewport]").setAttribute("content", "height=" + window.innerHeight + "px, width=" + window.innerWidth + "px, initial-scale=1.0")
     </script>
 </head>
 
@@ -31,7 +31,10 @@
             <div class="container-for-logo">
                 <input type="file" name="logo" id="logo">
             </div>
-            <input type="text" placeholder="Lineup name (optional)" name="lineupName" id="lineupName">
+            <div class="lineup-name-wrapper">
+                <label class="lineup-label">lineup name(optional)</label>
+            <input type="text" placeholder=" " name="lineupName" id="lineupName" class="lineup-name">
+            </div>
             <div class="playerNames" id="playerNames"></div>
         </div>
     </div>
