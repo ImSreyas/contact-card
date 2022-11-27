@@ -70,12 +70,12 @@
 /* .name-field:focus{
 } */
 .contact-card-main-container:has(.name-field:not(:placeholder-shown)) .name-label{
-    --pre: calc(-1.5rem + 1px);
+    --pre: calc(-1.45rem + 1px);
     transform: translateY(var(--pre));
     font-size: .7rem;
 }
 .contact-card-main-container:has(.name-field:focus) .name-label{
-    transform: translateY(-1.5rem);
+    transform: translateY(-1.45rem);
     font-size: .7rem;
 }
 
@@ -91,7 +91,7 @@
 .team-name-wrapper,.lineup-name-wrapper{
     width: 100%;
     position: relative;
-    padding: 2% 0;
+    padding: 3% 0;
 }
 .team-label,.lineup-label{
     pointer-events: none;
@@ -145,7 +145,7 @@
     color: white;
 } */
 .team-name-wrapper:has(.teamName:not(:placeholder-shown)) .team-label, .lineup-name-wrapper:has(.lineup-name:not(:placeholder-shown)) .lineup-label{
-    --pre: calc(-1.5rem);
+    --pre: calc(-1.45rem);
     transform: translateY(var(--pre));
     font-size: .7rem;
     color: black;
@@ -161,7 +161,7 @@
     color: white;
 }
 .team-name-wrapper:has(.teamName:focus) .team-label,.lineup-name-wrapper:has(.lineup-name:focus) .lineup-label{
-    transform: translateY(-1.5rem);
+    transform: translateY(-1.45rem);
     font-size: .7rem;
     color: white;
     box-shadow: none;
