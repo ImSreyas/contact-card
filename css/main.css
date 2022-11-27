@@ -109,7 +109,7 @@
 .teamName,.lineup-name{
     height: 100%;
     width: 100%;
-    padding: 3% 0 .5%;
+    padding: 2.5%;
     box-sizing: border-box;
     border: none;
     font-size: 1rem;
@@ -119,12 +119,36 @@
 .teamName:hover,.lineup-name:hover{
     cursor:pointer;
 }
-/* .teamName:focus{
-} */
+.teamName:focus{
+    border: 1px solid rgb(174, 174, 174);
+    border-radius: .5rem;
+}
+.team-label{
+    background-color: transparent;
+    height: fit-content;
+    width: fit-content;
+    margin-left: .8rem;
+    margin-top: 1rem;
+    padding: 0 2%;
+}
+.team-name-wrapper:has(.teamName:focus) .team-label{
+    background-color: white;
+    height: fit-content;
+    width: fit-content;
+    margin-left: .8rem;
+    margin-top: 1rem;
+}
 .team-name-wrapper:has(.teamName:not(:placeholder-shown)) .team-label, .lineup-name-wrapper:has(.lineup-name:not(:placeholder-shown)) .lineup-label{
-    --pre: calc(-1.5rem + 1px);
+    --pre: calc(-1.5rem);
     transform: translateY(var(--pre));
     font-size: .7rem;
+}
+.team-name-wrapper:has(.teamName:not(:placeholder-shown)) .teamName{
+    border: 1px solid rgb(174, 174, 174);
+    border-radius: .5rem;
+}
+.team-name-wrapper:has(.teamName:not(:placeholder-shown)) .team-label{
+    background-color: white;
 }
 .team-name-wrapper:has(.teamName:focus) .team-label,.lineup-name-wrapper:has(.lineup-name:focus) .lineup-label{
     transform: translateY(-1.5rem);

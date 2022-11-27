@@ -57,7 +57,7 @@
     function addPlayerName() {
         // adding a label for the teamName
         const teamLabel = document.createElement("label")
-        teamLabel.innerHTML = "Team name +"
+        teamLabel.innerHTML = "Add player"
         teamLabel.setAttribute("class","team-label")
         // team name input field 
         const teamName = document.createElement('input')
@@ -77,6 +77,8 @@
 
     function addMorePlayerName(item) {
         const noOfChildren = playerNamesDiv.childElementCount
+        const childIndex = Array.prototype.indexOf.call(playerNamesDiv.children, item.parentElement)+1
+        const withinLimit = (childIndex < 6) ? true : false
         // storing that the element is last or not
         let lastItem = (item == playerNamesDiv.children[noOfChildren - 1].children[1]) ? true : false
         // storing that the element is first or not
@@ -84,8 +86,8 @@
         //adding only if the user is in the last input
         if(item.value != 0)
         if (lastItem == true){
-            changeLabel(item)
-            return addPlayerName()
+            changeLabel(item, childIndex)
+            if(withinLimit == true)return addPlayerName()
         }
         //removing current input if the previous input is cleared
         if (item.value == 0 && noOfChildren > 1 && lastItem == false) {
@@ -94,7 +96,10 @@
         }
         if(event.key == 'Backspace'){
             if (lastItem == true && firstItem == false){
-                if(item.value == 0)previousInputField(item)
+                if(item.value == 0){
+                    previousInputField(item)
+                    changeLabel(item)
+                }
             }
         }
         //checking if the enter key is pressed
@@ -117,7 +122,7 @@
         element.parentElement.previousSibling.children[1].focus()
     }
     function changeLabel(element){
-        element.previousSibling.innerHTML = "Team name"
+        element.previousSibling.innerHTML = "Player"
     }
 
 </script>
