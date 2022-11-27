@@ -27,9 +27,9 @@
     /* margin: auto 0 auto auto; */
     background-color: white;
     border-radius: 1em;
-    padding: 2.5rem;
+    padding: 1.5rem;
     box-sizing: border-box;
-    box-shadow: 0 0 3rem rgb(196, 196, 196);
+    /* box-shadow: 0 0 3rem rgb(196, 196, 196); */
 }
 .contact-card-main-container input:focus{
     outline: none;
@@ -109,50 +109,62 @@
 .teamName,.lineup-name{
     height: 100%;
     width: 100%;
-    padding: 2.5%;
+    padding: 3% 3% 2.5%;
     box-sizing: border-box;
     border: none;
     font-size: 1rem;
     color: rgb(0, 0, 0);
-    border-bottom: 1px solid rgb(174, 174, 174);
+    /* border-bottom: 1px solid rgb(174, 174, 174); */
 }
 .teamName:hover,.lineup-name:hover{
     cursor:pointer;
 }
 .teamName:focus{
-    border: 1px solid rgb(174, 174, 174);
+    /* border: 1px solid rgb(174, 174, 174); */
     border-radius: .5rem;
+    box-shadow: 0 0 .5rem rgb(196 196 196);
 }
 .team-label{
-    background-color: transparent;
+    background-color: rgb(239, 21, 239);
     height: fit-content;
     width: fit-content;
     margin-left: .8rem;
-    margin-top: 1rem;
-    padding: 0 2%;
+    margin-top: .8rem;
+    padding: .2% 2%;
+    border-radius: .2rem;
+    transition: all 300ms ease-in-out;
+    color: white;
+    box-shadow: 0 0 .5rem rgb(196 196 196);
 }
-.team-name-wrapper:has(.teamName:focus) .team-label{
+/* .team-name-wrapper:has(.teamName:focus) .team-label{
     background-color: white;
     height: fit-content;
     width: fit-content;
     margin-left: .8rem;
-    margin-top: 1rem;
-}
+    margin-top: .8rem;
+    color: white;
+} */
 .team-name-wrapper:has(.teamName:not(:placeholder-shown)) .team-label, .lineup-name-wrapper:has(.lineup-name:not(:placeholder-shown)) .lineup-label{
     --pre: calc(-1.5rem);
     transform: translateY(var(--pre));
     font-size: .7rem;
+    color: black;
+    box-shadow: none;
 }
 .team-name-wrapper:has(.teamName:not(:placeholder-shown)) .teamName{
-    border: 1px solid rgb(174, 174, 174);
+    /* border: 1px solid rgb(174, 174, 174); */
     border-radius: .5rem;
+    box-shadow: 0 0 .5rem rgb(196 196 196);
 }
 .team-name-wrapper:has(.teamName:not(:placeholder-shown)) .team-label{
-    background-color: white;
+    /* background-color: white; */
+    color: white;
 }
 .team-name-wrapper:has(.teamName:focus) .team-label,.lineup-name-wrapper:has(.lineup-name:focus) .lineup-label{
     transform: translateY(-1.5rem);
     font-size: .7rem;
+    color: white;
+    box-shadow: none;
 }
 
 @media (width <= 500px){
